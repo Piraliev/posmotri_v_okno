@@ -82,7 +82,6 @@ fieldset {
 .title {
   margin-block-end: 26px;
   font-family: Oswald, sans-serif;
-  font-weight: 700;
   font-size: 75px;
   line-height: 94%;
   text-transform: uppercase;
@@ -102,11 +101,13 @@ fieldset {
 .result__video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content__card-link {
   display: block;
-  margin: 2px;
+  padding: 2px;
   color: #fff;
   text-decoration: none;
 }
@@ -137,11 +138,11 @@ fieldset {
   margin-block-end: 30px;
 }
 
-.content__list-item:hover {
+.content__card-link:hover {
   text-decoration: underline;
 }
 
-.content__list-item:active {
+.content__card-link:active {
   background-color: #545050;
 }
 
@@ -153,7 +154,7 @@ fieldset {
 
 .content__video-card-thumbnail {
   width: 194px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
@@ -167,7 +168,6 @@ fieldset {
 }
 
 .search-form__fieldset-title {
-  margin-block-end: 5px;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
@@ -178,6 +178,8 @@ fieldset {
   align-items: center;
   gap: 5px;
   width: fit-content;
+  margin-block-end: 5px;
+  margin-block-start: 5px;
 }
 
 .search-form__textfield:focus {
@@ -190,6 +192,7 @@ fieldset {
 
 .search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .search-form__label:hover > .search-form__label-text {
@@ -202,6 +205,8 @@ fieldset {
   border: 1px solid #fff;
   padding: 0;
   color: #fff;
+  font-family: inherit;
+  font-size: 18px;
   font-weight: 700;
   background-color: transparent;
 }
@@ -230,12 +235,14 @@ fieldset {
 
 .search-form__textfield {
   width: 225px;
+  height: 22px;
   border: 0;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  padding: 2.5px 14px 2.5px 1px;
-  color: rgba(255, 255, 255, 0.7);
+
+  color: #fff;
   font-family: inherit;
+  font-size: inherit;
   background-color: transparent;
   caret-color: rgba(255, 255, 255, 0.7);
   appearance: none;
@@ -244,16 +251,17 @@ fieldset {
 .search-form__checkbox-list {
   display: flex;
   gap: 15px;
+  justify-content: center;
 }
 
 .search-form__pseudo-checkbox {
   width: 19px;
   height: 19px;
-  outline: 1px solid #fff;
+  outline: 1px solid currentColor;
 }
 
 .search-form__checkbox[type="checkbox"]:checked
   + .search-form__pseudo-checkbox {
-  border: 1px solid #000;
+  border: 1px solid #1b1919;
   background-color: #fff;
 }
